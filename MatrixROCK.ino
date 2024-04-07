@@ -328,8 +328,16 @@ void topOffHandler() {
   }
 }
 
+void ReCal(){
+      if (waitingForJetson - timeOfMaybe > reCalTime) {
+      //recal
+      state = CALIBRATION;
+      //ensure set back to inital conditions
+    }
+}
 void loop() {
   topOffHandler();
+  ReCal();
 
   switch (state) {
     case CALIBRATION:
